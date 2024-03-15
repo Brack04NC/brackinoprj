@@ -3,74 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Room</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #chat-box {
-            width: 400px;
-            height: 300px;
-            border: 1px solid #ccc;
-            overflow-y: scroll;
-            margin-bottom: 10px;
-            padding: 10px;
-        }
-        #input-box {
-            width: 300px;
-        }
-    </style>
+    <title>Scrivi su File TXT</title>
 </head>
 <body>
-    <h1>Chat Room</h1>
-    <div id="chat-box"></div>
-    <input type="text" id="input-box" placeholder="Type your message...">
-    <button onclick="sendMessage()">Send</button>
+    <h1>Scrivi su File TXT</h1>
+    <form id="message-form">
+        <label for="message">Inserisci la tua stringa:</label><br>
+        <input type="text" id="message" name="message"><br><br>
+        <button type="submit">Invia</button>
+    </form>
 
     <script>
-        // Function to load chat history from file
-        function loadChatHistory() {
+        document.getElementById("message-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita il comportamento predefinito del form
+
+            var message = document.getElementById("message").value;
+
+            // Effettua una richiesta POST al file PHP per scrivere la stringa su file
             var xhr = new XMLHttpRequest();
+            xhr.open("POST", "write_to_file.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    document.getElementById("chat-box").innerHTML = xhr.responseText;
-                    // Scroll to bottom of chat box
-                    document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
+                if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+                    alert("Stringa salvata correttamente!");
                 }
             };
-            xhr.open("GET", "chat_history.txt", true);
-            xhr.send();
-        }
-
-        // Load chat history on page load
-        window.onload = function() {
-            loadChatHistory();
-        };
-
-        // Function to send message
-        function sendMessage() {
-            var message = document.getElementById("input-box").value;
-            var username = prompt("Please enter your username:");
-            var chatBox = document.getElementById("chat-box");
-            var currentDate = new Date();
-            var timestamp = currentDate.toLocaleString();
-
-            var formattedMessage = "[" + timestamp + "] " + username + ": " + message + "<br>";
-
-            chatBox.innerHTML += formattedMessage;
-
-            // Send message to server (in this case, writing to a text file)
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "save_message.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send("message=" + encodeURIComponent(formattedMessage));
-
-            // Clear input box after sending message
-            document.getElementById("input-box").value = "";
-
-            // Scroll to bottom of chat box
-            document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
-        }
+            xhr.send("message=" + encodeURIComponent(message));
+        });
     </script>
 </body>
 </html>
