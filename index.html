@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chat-box {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        #input-box {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat Room</h1>
+    <div id="chat-box"></div>
+    <input type="text" id="input-box" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById("input-box").value;
+            var username = prompt("Please enter your username:");
+            var chatBox = document.getElementById("chat-box");
+            var currentDate = new Date();
+            var timestamp = currentDate.toLocaleString();
+
+            var formattedMessage = "[" + timestamp + "] " + username + ": " + message + "<br>";
+
+            chatBox.innerHTML += formattedMessage;
+
+            // Send message to server (in this case, writing to a text file)
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "save_message.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.send("message=" + encodeURIComponent(formattedMessage));
+
+            // Clear input box after sending message
+            document.getElementById("input-box").value = "";
+        }
+    </script>
+</body>
+</html>
