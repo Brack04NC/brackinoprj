@@ -17,7 +17,7 @@
             padding: 10px;
         }
         #input-box {
-            width: 100%;
+            width: 300px;
         }
     </style>
 </head>
@@ -28,6 +28,26 @@
     <button onclick="sendMessage()">Send</button>
 
     <script>
+        // Function to load chat history from file
+        function loadChatHistory() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("chat-box").innerHTML = xhr.responseText;
+                    // Scroll to bottom of chat box
+                    document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
+                }
+            };
+            xhr.open("GET", "chat_history.txt", true);
+            xhr.send();
+        }
+
+        // Load chat history on page load
+        window.onload = function() {
+            loadChatHistory();
+        };
+
+        // Function to send message
         function sendMessage() {
             var message = document.getElementById("input-box").value;
             var username = prompt("Please enter your username:");
@@ -47,6 +67,9 @@
 
             // Clear input box after sending message
             document.getElementById("input-box").value = "";
+
+            // Scroll to bottom of chat box
+            document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
         }
     </script>
 </body>
