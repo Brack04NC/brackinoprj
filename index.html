@@ -1,50 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modifica File HTML</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CaneChic: Portfolio Toelettatrice per Cani</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Modifica File HTML</h1>
-    <textarea id="file-content" rows="10" cols="50"></textarea><br>
-    <button onclick="saveToFile()">Salva</button>
+  <header>
+    <h1>CaneChic: Portfolio Toelettatrice per Cani</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">Chi Siamo</a></li>
+        <li><a href="#services">Servizi</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonianze</a></li>
+        <li><a href="#contact">Contattaci</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <!-- Sezioni di contenuto -->
+  </main>
 
-    <script>
-        // Funzione per leggere il contenuto del file
-        function readFile() {
-            var fileInput = document.getElementById('file-input');
-            var file = fileInput.files[0];
-            var reader = new FileReader();
+  <footer>
+    <p>&copy; 2024 CaneChic. Tutti i diritti riservati.</p>
+  </footer>
 
-            reader.onload = function(e) {
-                var text = e.target.result;
-                document.getElementById('file-content').value = text;
-            };
-
-            reader.readAsText(file);
-        }
-
-        // Funzione per salvare il contenuto modificato nel file
-        function saveToFile() {
-            var textToSave = document.getElementById("file-content").value;
-            var blob = new Blob([textToSave], { type: "text/plain;charset=utf-8" });
-            var fileName = "file_modificato.html";
-
-            // Crea un elemento <a> per il download del file
-            var a = document.createElement("a");
-            a.download = fileName;
-            a.href = window.URL.createObjectURL(blob);
-            a.style.display = "none";
-            document.body.appendChild(a);
-
-            // Simula un click sull'elemento <a> per avviare il download del file
-            a.click();
-
-            // Rimuovi l'elemento <a> dopo il download
-            window.URL.revokeObjectURL(a.href);
-            document.body.removeChild(a);
-        }
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
