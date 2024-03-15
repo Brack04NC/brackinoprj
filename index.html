@@ -6,29 +6,15 @@
     <title>Scrivi su File TXT</title>
 </head>
 <body>
-    <h1>Scrivi su File TXT</h1>
-    <form id="message-form">
-        <label for="message">Inserisci la tua stringa:</label><br>
-        <input type="text" id="message" name="message"><br><br>
-        <button type="submit">Invia</button>
-    </form>
+    <h1>Scrivi "Ciao" su File TXT</h1>
+    <button id="writeButton">Premi per scrivere "Ciao" nel file TXT</button>
 
     <script>
-        document.getElementById("message-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Evita il comportamento predefinito del form
-
-            var message = document.getElementById("message").value;
-
-            // Effettua una richiesta POST al file PHP per scrivere la stringa su file
+        document.getElementById("writeButton").addEventListener("click", function() {
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", "write_to_file.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-                    alert("Stringa salvata correttamente!");
-                }
-            };
-            xhr.send("message=" + encodeURIComponent(message));
+            xhr.open("GET", "write_to_file.php", true);
+            xhr.send();
+            alert("Messaggio 'Ciao' scritto correttamente nel file!");
         });
     </script>
 </body>
