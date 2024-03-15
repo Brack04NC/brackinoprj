@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scrivi su File TXT</title>
+    <title>Scrivi su File di Testo</title>
 </head>
 <body>
-    <h1>Scrivi "Ciao" su File TXT</h1>
-    <button id="writeButton">Premi per scrivere "Ciao" nel file TXT</button>
+    <h1>Scrivi su File di Testo</h1>
+    <textarea id="text-input" rows="10" cols="50" placeholder="Inserisci il testo da salvare..."></textarea><br>
+    <button onclick="saveToFile()">Salva su File</button>
 
     <script>
-        document.getElementById("writeButton").addEventListener("click", function() {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", "write_to_file.php", true);
-            xhr.send();
-            alert("Messaggio 'Ciao' scritto correttamente nel file!");
-        });
+        function saveToFile() {
+            var textToSave = document.getElementById("text-input").value;
+            var blob = new Blob([textToSave], { type: "text/plain;charset=utf-8" });
+            var fileName = "data.txt";
+
+            // Crea un elemento <a> per il download del file
+            var a = document.createElement("a");
+            a.download = fileName;
+            a.href = window.URL.createObjectURL(blob);
+            a.style.display = "none";
+            document.body.appendChild(a);
+
+            // Simula un click sull'elemento <a> per avviare il download del file
+            a.click();
+
+            // Rimuovi l'elemento <a> dopo il download
+            window.URL.revokeObjectURL(a.href);
+            document.body.removeChild(a);
+        }
     </script>
 </body>
 </html>
