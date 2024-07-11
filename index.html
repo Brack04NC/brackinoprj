@@ -64,6 +64,19 @@
             margin: 0;
             color: #3498db;
         }
+        .cards {
+            width: 190px;
+            height: 254px;
+            background: white;
+            border-radius: 10px;
+            transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .shadow {
+            box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+                0 0  0 2px rgb(190, 190, 190),
+                0.3em 0.3em 1em rgba(0,0,0,0.3);
+        }
     </style>
 </head>
 <body>
@@ -71,7 +84,7 @@
         <h1>Portfolio Progetti Java</h1>
     </header>
     <main class="container">
-        <div class="card">
+        <div class="cards shadow">
             <img src="progetto1.jpg" alt="Progetto 1">
             <div class="card-content">
                 <h2 class="card-title">Progetto 1</h2>
@@ -79,7 +92,7 @@
                 <a href="#">Scopri di più</a>
             </div>
         </div>
-        <div class="card">
+        <div class="cards shadow">
             <img src="progetto2.jpg" alt="Progetto 2">
             <div class="card-content">
                 <h2 class="card-title">Progetto 2</h2>
