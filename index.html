@@ -1,12 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZITTO!</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Progetti Java</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            width: 300px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            width: 100%;
+        }
+        .card-content {
+            padding: 20px;
+        }
+        .card-title {
+            font-size: 1.5em;
+            margin: 0;
+        }
+        .card-description {
+            margin: 10px 0;
+            color: #777;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body style="text-align: center">
-<h1>NUCCI DEVI STA ZITTO</h1>
+<body>
+    <header>
+        <h1 style="text-align: center; padding: 20px; background-color: #3498db; color: white;">Portfolio Progetti Java</h1>
+    </header>
+    <main class="container">
+        <div class="card">
+            <img src="progetto1.jpg" alt="Progetto 1">
+            <div class="card-content">
+                <h2 class="card-title">Progetto 1</h2>
+                <p class="card-description">Descrizione breve del Progetto 1.</p>
+                <a href="#">Scopri di più</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="progetto2.jpg" alt="Progetto 2">
+            <div class="card-content">
+                <h2 class="card-title">Progetto 2</h2>
+                <p class="card-description">Descrizione breve del Progetto 2.</p>
+                <a href="#">Scopri di più</a>
+            </div>
+        </div>
+        <div class="card">
+            <img src="progetto3.jpg" alt="Progetto 3">
+            <div class="card-content">
+                <h2 class="card-title">Progetto 3</h2>
+                <p class="card-description">Descrizione breve del Progetto 3.</p>
+                <a href="#">Scopri di più</a>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
