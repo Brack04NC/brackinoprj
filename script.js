@@ -10,3 +10,19 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
   });
 });
+
+function changeTheme(theme) {
+    let themeStyle = document.getElementById('theme-style');
+    if (theme === 'light') {
+        themeStyle.setAttribute('href', 'styles-light.css');
+    } else {
+        themeStyle.setAttribute('href', 'styles-dark.css');
+    }
+}
+
+// Imposta il tema di default al caricamento della pagina
+document.addEventListener('DOMContentLoaded', function() {
+    changeTheme('dark');
+    document.getElementById('theme').value = 'dark';
+});
+
