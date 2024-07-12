@@ -20,9 +20,26 @@ function changeTheme(theme) {
     }
 }
 
-// Imposta il tema di default al caricamento della pagina
 document.addEventListener('DOMContentLoaded', function() {
     changeTheme('dark');
     document.getElementById('theme').value = 'dark';
+
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            cards.forEach(c => {
+                if (c !== card) {
+                    c.classList.add('dimmed');
+                }
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            cards.forEach(c => {
+                c.classList.remove('dimmed');
+            });
+        });
+    });
 });
 
