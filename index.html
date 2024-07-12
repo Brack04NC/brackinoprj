@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" id="theme-style">
     <title>Portfolio Progetti Java</title>
 </head>
 <body>
     <header>
         <h1>Portfolio Progetti Java</h1>
+        <div class="theme-selector">
+            <label for="theme">Tema:</label>
+            <select id="theme" onchange="changeTheme(this.value)">
+                <option value="dark">Scuro</option>
+                <option value="light">Chiaro</option>
+            </select>
+        </div>
     </header>
     <main class="container">
         <div class="card">
@@ -36,5 +43,6 @@
             </div>
         </div>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
