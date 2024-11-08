@@ -18,6 +18,8 @@ function changeTheme(theme) {
     } else {
         themeStyle.setAttribute('href', 'styles-dark.css');
     }
+    // Salva il tema selezionato nel localStorage
+    localStorage.setItem('selectedTheme', theme);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
