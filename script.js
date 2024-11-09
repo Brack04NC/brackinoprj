@@ -58,8 +58,6 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-
-  
   /*
   document.addEventListener('DOMContentLoaded', function() {
       // Carica il tema salvato o imposta il tema di default a 'dark'
