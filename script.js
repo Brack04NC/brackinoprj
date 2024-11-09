@@ -38,7 +38,26 @@ document.querySelectorAll('nav a').forEach(anchor => {
             themeStyle.setAttribute('href', 'styles-dark.css');
         }
     });
+
+    // Gestione della sfocatura e dello zoom delle card
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            cards.forEach(c => {
+                if (c !== card) {
+                    c.classList.add('dimmed');
+                }
+            });
+        });
+
+        card.addEventListener('mouseleave', () => {
+            cards.forEach(c => {
+                c.classList.remove('dimmed');
+            });
+        });
+    });
 });
+
 
   
   /*
