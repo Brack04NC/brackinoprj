@@ -64,9 +64,12 @@ body {
 .switch {
     font-size: 17px;
     position: relative;
-    display: inline-block;
+    /*display: inline-block;*/
     width: 4em;
     height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
   /* Hide default HTML checkbox */
