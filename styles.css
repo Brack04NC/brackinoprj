@@ -1,63 +1,88 @@
 body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #ffffff;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin: 20px;
-        }
-        .card {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            margin: 20px;
-            width: 300px;
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            width: 100%;
-        }
-        .card-content {
-            padding: 20px;
-        }
-        .card-title {
-            font-size: 1.5em;
-            margin: 0;
-        }
-        .card-description {
-            margin: 10px 0;
-            color: #bbbbbb;
-        }
-        .card a {
-            display: inline-block;
-            margin-top: 10px;
-            text-decoration: none;
-            color: #3498db;
-            font-weight: bold;
-        }
-        .card a:hover {
-            text-decoration: underline;
-        }
-        header {
-            background-color: #1e1e1e;
-            padding: 20px;
-        }
-        header h1 {
-            margin: 0;
-            color: #3498db;
-            text-align: center;
-        }
-        /* From Uiverse.io by csozidev */ 
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 20px;
+  width: 300px;
+  transition: transform 0.2s, filter 0.2s, opacity 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.card-description {
+  margin: 10px 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+header {
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+  color: #3498db;
+  text-align: center;
+}
+
+.theme-selector {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+.card.dimmed {
+  filter: blur(5px) grayscale(70%);
+  opacity: 0.5;
+
+
+
+
+}
+
+/* From Uiverse.io by csozidev */
 /* Minecraft switch made by: csozi | Website: english.csozi.hu*/
 
 /* The switch - the box around the slider */
@@ -67,7 +92,7 @@ body {
   font-size: 17px;
   position: relative;
   display: inline-flex;
- /*display: inline-block;*/
+  /*display: inline-block;*/
   width: 4em;
   height: 2em;
 }
@@ -113,19 +138,19 @@ body {
   opacity: 0;
 }
 
-.switch input:checked + .slider {
+.switch input:checked+.slider {
   background-color: #ccc;
 }
 
-.switch input:focus + .slider {
+.switch input:focus+.slider {
   box-shadow: 0 0 1px #ccc;
 }
 
-.switch input:checked ~ .off {
+.switch input:checked~.off {
   transform: translateX(2em);
 }
 
-.switch input:checked ~ .on {
+.switch input:checked~.on {
   transform: translateX(2em);
   opacity: 1;
 }
