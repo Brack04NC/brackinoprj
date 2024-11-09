@@ -25,19 +25,18 @@ document.querySelectorAll('nav a').forEach(anchor => {
   document.addEventListener('DOMContentLoaded', function() {
     const themeSwitcher = document.querySelector('.switch input');
     const themeStyle = document.getElementById('theme-style');
-
-    // Carica il tema salvato o imposta il tema di default a 'dark'
-    const savedTheme = localStorage.getItem('selectedTheme') || 'dark';
-    themeStyle.setAttribute('href', `styles-${savedTheme}.css`);
-
-    // Imposta lo switch in base al tema salvato
-    themeSwitcher.checked = (savedTheme === 'light');
+    
+    // Imposta il tema iniziale su "dark"
+    themeStyle.setAttribute('href', 'styles-dark.css');
+    themeSwitcher.checked = false;
 
     // Aggiunge un listener per il cambiamento dello switch
     themeSwitcher.addEventListener('change', function() {
-        const newTheme = themeSwitcher.checked ? 'light' : 'dark';
-        themeStyle.setAttribute('href', `styles-${newTheme}.css`);
-        localStorage.setItem('selectedTheme', newTheme);
+        if (themeSwitcher.checked) {
+            themeStyle.setAttribute('href', 'styles-light.css');
+        } else {
+            themeStyle.setAttribute('href', 'styles-dark.css');
+        }
     });
 
     // Gestione della sfocatura e dello zoom delle card
