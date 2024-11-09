@@ -82,6 +82,8 @@ header h1 {
 
 /* The switch - the box around the slider */
 .switch {
+    align-items: center;
+    align-content: center;
     font-size: 17px;
     position: relative;
     display: inline-flex;
