@@ -21,7 +21,27 @@ document.querySelectorAll('nav a').forEach(anchor => {
       // Salva il tema selezionato nel localStorage
       localStorage.setItem('selectedTheme', theme);
   }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeSwitcher = document.querySelector('.switch input');
+    const themeStyle = document.getElementById('theme-style');
+
+    // Imposta il tema iniziale su "dark"
+    themeStyle.setAttribute('href', 'styles-dark.css');
+    themeSwitcher.checked = false;
+
+    // Aggiunge un listener per il cambiamento dello switch
+    themeSwitcher.addEventListener('change', function() {
+        if (themeSwitcher.checked) {
+            themeStyle.setAttribute('href', 'styles-light.css');
+        } else {
+            themeStyle.setAttribute('href', 'styles-dark.css');
+        }
+    });
+});
+
   
+  /*
   document.addEventListener('DOMContentLoaded', function() {
       // Carica il tema salvato o imposta il tema di default a 'dark'
       const savedTheme = localStorage.getItem('selectedTheme') || 'dark';
@@ -46,4 +66,4 @@ document.querySelectorAll('nav a').forEach(anchor => {
           });
       });
   });
-  
+  */
