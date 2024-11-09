@@ -17,10 +17,6 @@ header h1 {
     color: #3498db;
 }
 
-.theme-selector {
-    margin-top: 10px;
-}
-
 .container {
     display: flex;
     flex-wrap: wrap;
