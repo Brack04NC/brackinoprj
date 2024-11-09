@@ -83,12 +83,9 @@ header h1 {
 .switch {
     font-size: 17px;
     position: relative;
-    /*display: inline-block;*/
+    display: inline-block;
     width: 4em;
     height: 2em;
-    display: flex; /* Chat GPT */
-    align-items: center; /* Chat GPT */
-    justify-content: space-between; /* Chat GPT */
   }
   
   /* Hide default HTML checkbox */
@@ -100,7 +97,6 @@ header h1 {
   
   /* The slider */
   .slider {
-    order: 2; /* Chat GPT */
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -120,8 +116,6 @@ header h1 {
     transition: .4s;
     image-rendering: pixelated;
     opacity: 1;
-    order: 1; /* Posiziona l'immagine a sinistra */
-    margin-right: 10px; /* Spazio tra l'immagine e lo slider */
   }
   
   .on {
@@ -133,8 +127,6 @@ header h1 {
     transition: .4s;
     image-rendering: pixelated;
     opacity: 0;
-    order: 1; /* Posiziona l'immagine a sinistra */
-    margin-right: 10px; /* Spazio tra l'immagine e lo slider */
   }
   
   .switch input:checked + .slider {
