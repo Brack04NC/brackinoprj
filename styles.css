@@ -67,9 +67,9 @@ body {
     /*display: inline-block;*/
     width: 4em;
     height: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Chat GPT */
+    align-items: center; /* Chat GPT */
+    justify-content: space-between; /* Chat GPT */
   }
   
   /* Hide default HTML checkbox */
@@ -81,6 +81,7 @@ body {
   
   /* The slider */
   .slider {
+    order: 2; /* Chat GPT */
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -100,6 +101,8 @@ body {
     transition: .4s;
     image-rendering: pixelated;
     opacity: 1;
+    order: 1; /* Posiziona l'immagine a sinistra */
+    margin-right: 10px; /* Spazio tra l'immagine e lo slider */
   }
   
   .on {
@@ -111,6 +114,8 @@ body {
     transition: .4s;
     image-rendering: pixelated;
     opacity: 0;
+    order: 1; /* Posiziona l'immagine a sinistra */
+    margin-right: 10px; /* Spazio tra l'immagine e lo slider */
   }
   
   .switch input:checked + .slider {
