@@ -92,6 +92,7 @@ header h1 {
   /*display: inline-block;*/
   width: 4em;
   height: 2em;
+  cursor: pointer;
 }
 
 /* Hide default HTML checkbox */
@@ -114,6 +115,7 @@ header h1 {
 }
 
 .off {
+  cursor: pointer;
   position: absolute;
   content: "";
   height: 2em;
@@ -125,6 +127,7 @@ header h1 {
 }
 
 .on {
+  cursor: pointer;
   position: absolute;
   content: "";
   height: 2em;
