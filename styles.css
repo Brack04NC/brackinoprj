@@ -95,6 +95,7 @@ header h1 {
   /*display: inline-block;*/
   width: 4em;
   height: 2em;
+  cursor: pointer;
 }
 
 /* Hide default HTML checkbox */
@@ -117,6 +118,7 @@ header h1 {
 }
 
 .off {
+  cursor: pointer;
   position: absolute;
   content: "";
   height: 2em;
@@ -125,10 +127,10 @@ header h1 {
   transition: .4s;
   image-rendering: pixelated;
   opacity: 1;
-  cursor: pointer;
 }
 
 .on {
+  cursor: pointer;
   position: absolute;
   content: "";
   height: 2em;
@@ -137,7 +139,6 @@ header h1 {
   transition: .4s;
   image-rendering: pixelated;
   opacity: 0;
-  cursor: pointer;
 }
 
 .switch input:checked+.slider {
