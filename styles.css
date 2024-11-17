@@ -125,6 +125,7 @@ header h1 {
   transition: .4s;
   image-rendering: pixelated;
   opacity: 1;
+  cursor: pointer;
 }
 
 .on {
@@ -136,6 +137,7 @@ header h1 {
   transition: .4s;
   image-rendering: pixelated;
   opacity: 0;
+  cursor: pointer;
 }
 
 .switch input:checked+.slider {
